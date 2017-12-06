@@ -4,8 +4,8 @@ Set up a private local Neo network
 
 # Setup local client
 
-- Download the neo-gui application
-- Unzip to a location
+- Download the neo-gui application from [HERE](https://github.com/neo-project/neo-gui/releases)
+- Unzip to a suitable location
 - In the folder there are two files to edit
   + ``protocol.json``
   + ``config.json``
