@@ -5,7 +5,7 @@ This project has a set of tools and documentation to get a developer up and runn
 It includes:
 
 - [Instructions and scripts to set up a local private testnet](docs/Local-Private-Network.md)
-- [Instructions and scripts to set up a local node](docs/Local-Node.md)
+- [Instructions and scripts to set up a local node](docs/Local-Client.md)
 - *TODO:* [Instructions and scripts to create contracts](contracts/README.md)
     + Includes example contracts
 
