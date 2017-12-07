@@ -9,7 +9,7 @@
 # Build with
 # 	- docker build -t avastmick/neo-node .
 # Use from a dir with anything you'd need:
-# 	- docker run -it --volume `pwd`:/neo avastmick/neo-node  bash
+# 	- docker run -it --rm --volume `pwd`:/neo avastmick/neo-node  bash
 
 FROM ubuntu:16.04
 LABEL maintainer="avastmick"
@@ -30,20 +30,15 @@ RUN git clone https://github.com/CityOfZion/neo-python.git /opt/neo-python && \
 	cd /opt/neo-python && git checkout origin/master
 RUN pip3 install --upgrade pip && pip3 install -r /opt/neo-python/requirements.txt && pip3 install -e /opt/neo-python
 
-#
-#  TODO:
-# 
-# Configure
-# 	- To attach to local test node
-# 	- To initialize a wallet
+# Add the config and wallet for the private testnet
+ADD ./config/config.json /opt/neo-python/config.json
+ADD ./config/protocol.json /opt/neo-python/protocol.json
+ADD ./wallet/dev.db3 /opt/neo-python/
+
 # TODO:
 # 	- To init the faucet
-# git clone https://github.com/CityOfZion/neo-faucet.git
-# cd neo-faucet
-# python3 -m venv venv
-# source venv/bin/activate
-# pip install -e ../neo-python
-# pip install -r requirements.tx
+# git clone https://github.com/CityOfZion/neo-faucet.git /opt/neo-faucet && \
+# pip install -r /opt/neo-faucet/requirements.tx
 # 
 
 # Add Tini
@@ -52,4 +47,4 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 # Run your program under Tini
-CMD ["python", "/opt/neo-python/prompt.py"]
+CMD ["python3", "/opt/neo-python/prompt.py", "-p"]
