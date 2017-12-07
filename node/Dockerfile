@@ -22,13 +22,14 @@ RUN apt-get update && apt-get install -y \
     mininet netcat curl wget unzip less python3 screen \
     ca-certificates apt-transport-https \
     libleveldb-dev sqlite3 libsqlite3-dev \
-    expect \
-	git-core python3.5-dev python3-pip libssl-dev
+    expect git \
+	python3.5-dev python3-pip libssl-dev
 
 # Install neo-python
 RUN git clone https://github.com/CityOfZion/neo-python.git /opt/neo-python && \
-	cd /opt/neo-python && git checkout origin/master && \
-    pip3 install -r /opt/neo-python/requirements.txt && pip3 install -e
+	cd /opt/neo-python && git checkout origin/master
+RUN pip3 install --upgrade pip && pip3 install -r /opt/neo-python/requirements.txt && pip3 install -e /opt/neo-python
+
 #
 #  TODO:
 # 
@@ -51,4 +52,4 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 # Run your program under Tini
-CMD ["python", "/opt/prompt.py"]
+CMD ["python", "/opt/neo-python/prompt.py"]
