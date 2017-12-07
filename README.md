@@ -4,8 +4,10 @@ This project has a set of tools and documentation to get a developer up and runn
 
 It includes:
 
-- [Instructions and scripts to set up a local private testnet][docs/Local-Private-Network.md]
-- [Instructions and scripts to set up a local node][src/Local-Client.md]
+- [Instructions and scripts to set up a local private testnet](src/Local-Private-Network.md)
+- [Instructions and scripts to set up a local node](src/Local-Node.md
+- 
+)
 - TODO: Instructions and scripts to create contracts
     + Includes example contracts
 
@@ -15,6 +17,3 @@ It eventually will have a run once script to install a fresh build on a develope
 - Second will be Windows
 - Last will be Mac
 
-
-[Local-Private-Network.md]: 
-[Local-Client.md]: 
