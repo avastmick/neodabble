@@ -91,7 +91,7 @@ root@6fe70962f7c8:/opt/node1/neo-cli#
 
 ```bash
 
-$ docker stop neo-privnet-with-gas
+$ docker stop neo-privnet
 
 ```
 
@@ -99,7 +99,7 @@ $ docker stop neo-privnet-with-gas
 
 ```bash
 
-$ docker rm -f neo-privnet-with-gas
+$ docker rm -f neo-privnet
 
 ```
 
@@ -110,7 +110,7 @@ Start the Neo-GUI client by clicking on ``neo-gui.exe``
 ## Import the wallet
 
 1. ``Wallet -> "Open Wallet Database..."``
-2. Select the wallet in this repo [wallet/dev.db3](wallet/dev.db3)
+2. Select the wallet in this repo [node/wallet/dev.db3](node/wallet/dev.db3)
 3. Enter password ``dev``
 4. Rebuild index for wallet ``Wallet -> "Rebuild Index"``
 
