@@ -25,8 +25,8 @@
     },
       "ApplicationConfiguration": {
       "DataDirectoryPath": "./Chains/privnet",
-      "NodePort": 20333,
-      "WsPort": 20334,
+      "NodePort": 20332,
+      "WsPort": 10332,
       "UriPrefix": [ "http://*:20332" ],
       "SslCert": "",
       "SslCertPassword": "",
