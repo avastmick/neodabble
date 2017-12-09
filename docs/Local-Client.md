@@ -31,7 +31,7 @@ $ python3 prompt.py
 
 You should see:
 
-![neo-python](img/neo-python-sync.png) 
+![neo-python](../img/neo-python-sync.png) 
 
 
 The run it as a permanent container that can be restarted:

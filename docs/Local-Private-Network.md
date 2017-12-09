@@ -116,4 +116,4 @@ Start the Neo-GUI client by clicking on ``neo-gui.exe``
 
 If everything is working, you should see the following:
 
-![Success!](img/2017-12-06.png)
+![Success!](../img/2017-12-06.png)
