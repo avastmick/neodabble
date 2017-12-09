@@ -18,6 +18,8 @@ docker run -it --rm --volume `pwd`:/src python  bash
 
 Test it is working: running with the container to ``rm`` on exit
 
+Note: using the ``-p`` flag for the ``prompt.py`` to set it to use the privnet
+
 ```bash
 
 $ cd node
@@ -25,7 +27,7 @@ $ docker build -t avastmick/neo-node .
 $ cd ..
 $ docker run -it --rm --volume `pwd`:/neo avastmick/neo-node  bash
 $ cd /opt/neo-python
-$ python3 prompt.py
+$ python3 prompt.py -p
 
 ```
 
@@ -40,9 +42,9 @@ The run it as a permanent container that can be restarted:
 $ docker run -it --name neo-python --volume `pwd`:/neo avastmick/neo-node  bash
 root@c2bf650cb987: exit
 $
-$ docker start neo-python
-root@c2bf650cb987: cd /opt/neo-python
-root@c2bf650cb987: python3 prompt.py
+$ docker start -i neo-python
+root@c2bf650cb987: cd /opt/neo-python  
+root@c2bf650cb987: python3 prompt.py -p
 
 ```
 

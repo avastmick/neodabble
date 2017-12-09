@@ -32,7 +32,7 @@ RUN pip3 install --upgrade pip && pip3 install -r /opt/neo-python/requirements.t
 
 # Add the config and wallet for the private testnet
 ADD ./config/config.json /opt/neo-python/config.json
-ADD ./config/protocol.json /opt/neo-python/protocol.json
+# ADD ./config/protocol.json /opt/neo-python/protocol.privnet.json
 ADD ./wallet/dev.db3 /opt/neo-python/
 
 # TODO:
