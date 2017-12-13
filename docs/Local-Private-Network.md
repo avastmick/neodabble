@@ -87,7 +87,9 @@ Now run the network
 
 ```bash
 $ docker pull metachris/neo-privnet-with-gas
-$ docker run -d --name neo-privnet -p 20333-20336:20333-20336/tcp -p 30333-30336:30333-30336/tcp metachris/neo-privnet-with-gas
+$ # Create a network for the private network to run on
+$ docker network create neo-privnet
+$ docker run -d --name neo-privnet --net=neo-privnet -p 20333-20336:20333-20336/tcp -p 30333-30336:30333-30336/tcp metachris/neo-privnet-with-gas
 ```
 
 ## Interacting

@@ -9,7 +9,7 @@
 # Build with
 # 	- docker build -t avastmick/neo-node .
 # Use from a dir with anything you'd need:
-# 	- docker run -it --rm --volume `pwd`:/neo avastmick/neo-node  bash
+# 	- docker run -it --rm -p  --volume $(pwd):/neo avastmick/neo-node  bash
 
 FROM ubuntu:16.04
 LABEL maintainer="avastmick"
@@ -31,9 +31,9 @@ RUN git clone https://github.com/CityOfZion/neo-python.git /opt/neo-python && \
 RUN pip3 install --upgrade pip && pip3 install -r /opt/neo-python/requirements.txt && pip3 install -e /opt/neo-python
 
 # Add the config and wallet for the private testnet
-ADD ./config/config.json /opt/neo-python/config.json
-# ADD ./config/protocol.json /opt/neo-python/protocol.privnet.json
-ADD ./wallet/dev.db3 /opt/neo-python/
+# ADD ./config/config.json /opt/neo-python/config.json
+ADD ./config/protocol.json /opt/neo-python/protocol.privnet.json
+# ADD ./wallet/dev.db3 /opt/neo-python/
 
 # TODO:
 # 	- To init the faucet
