@@ -92,6 +92,10 @@ $ docker network create neo-privnet
 $ docker run -d --name neo-privnet --net=neo-privnet -p 20333-20336:20333-20336/tcp -p 30333-30336:30333-30336/tcp metachris/neo-privnet-with-gas
 ```
 
+*Note:* if `docker network create neo-privnet` fails with: `Error response from daemon: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network`
+
+It can mean there is a lot of network cruft, use ``docker network prune`` and try again...
+
 ## Interacting
 
 ```bash

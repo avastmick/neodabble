@@ -9,7 +9,7 @@
 # Build with
 # 	- docker build -t avastmick/neo-node .
 # Use from a dir with anything you'd need:
-# 	- docker run -it --rm -p  --volume $(pwd):/neo avastmick/neo-node  bash
+# 	- docker run -it --rm --net=neo-privnet  --volume $(pwd):/neo avastmick/neo-node  bash
 
 FROM ubuntu:16.04
 LABEL maintainer="avastmick"
@@ -31,8 +31,9 @@ RUN git clone https://github.com/CityOfZion/neo-python.git /opt/neo-python && \
 RUN pip3 install --upgrade pip && pip3 install -r /opt/neo-python/requirements.txt && pip3 install -e /opt/neo-python
 
 # Add the config and wallet for the private testnet
-# ADD ./config/config.json /opt/neo-python/config.json
-ADD ./config/protocol.json /opt/neo-python/protocol.privnet.json
+ADD ./protocol.json /opt/neo-python/protocol.privnet.json
+
+# Configure a working wallet
 # ADD ./wallet/dev.db3 /opt/neo-python/
 
 # TODO:
@@ -46,5 +47,6 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
-# Run your program under Tini
-CMD ["python3", "/opt/neo-python/prompt.py", "-p"]
+# Expose the ports
+EXPOSE 20332
+EXPOSE 30332

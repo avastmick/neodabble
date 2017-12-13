@@ -26,9 +26,9 @@ Note: using the ``-p`` flag for the ``prompt.py`` to set it to use the privnet
 
 ```bash
 
-$ cd node
+$ cd node/neo-python
 $ docker build -t avastmick/neo-node .
-$ cd ..
+$ cd ../..
 $ docker run -it --rm --net=neo-privnet --volume $(pwd):/neo avastmick/neo-node  bash
 $ cd /opt/neo-python
 $ python3 prompt.py -p
