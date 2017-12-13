@@ -18,7 +18,7 @@ Replace the contents or each with the following:
 ## ``protocol.json``
 
 ```json
-{
+﻿{
   "ProtocolConfiguration": {
     "Magic": 56753,
     "AddressVersion": 23,
@@ -27,9 +27,6 @@ Replace the contents or each with the following:
       "02103a7f7dd016558597f7960d27c516a4394fd968b9e65155eb4b013e4040406e",
       "03d90c07df63e690ce77912e10ab51acc944b66860237b608c4f8f8309e71ee699",
       "02a7bc55fe8684e0119768d104ba30795bdcc86619e864add26156723ed185cd62"
-    ],
-    "RPCList":[
-      "127.0.0.1:20332"
     ],
     "SeedList": [
       "127.0.0.1:20333",
@@ -42,20 +39,9 @@ Replace the contents or each with the following:
       "IssueTransaction": 500,
       "PublishTransaction": 500,
       "RegisterTransaction": 10000
-    },
-      "ApplicationConfiguration": {
-      "DataDirectoryPath": "./Chains/privnet",
-      "NodePort": 20332,
-      "WsPort": 10332,
-      "UriPrefix": [ "http://*:20332" ],
-      "SslCert": "",
-      "SslCertPassword": "",
-      "VersionName":"/NEO-PYTHON:2.3.4/",
-      "BootstrapFile":""
     }
   }
 }
-
 ```
 
 ## ``config.json``
@@ -65,9 +51,9 @@ Replace the contents or each with the following:
   "ApplicationConfiguration": {
     "DataDirectoryPath": "ChainPrivTestNet",
     "CertCachePath": "Certs",
-    "NodePort": 20332,
-    "WsPort": 10332,
-    "RPCPort": 30332,
+    "NodePort": 20333,
+    "WsPort": 10334,
+    "RPCPort": 30334,
     "UriPrefix": [ "http://*:20332" ],
     "SslCert": "",
     "SslCertPassword": "",
@@ -136,3 +122,5 @@ Start the Neo-GUI client by clicking on ``neo-gui.exe``
 If everything is working, you should see the following:
 
 ![Success!](../img/2017-12-06.png)
+
+docker run -d --name neo-privnet -p 20333-20336:20333-20336/tcp -p 30333-30336:30333-30336/tcp metachris/neo-privnet-with-gas
