@@ -8,13 +8,15 @@ This describes how to install and configure the NEO clients
 
 # NEO cli
 
-Going to use the python node client using the latest python image 3.6.3 (12/7/2017)
-
-```bash
-docker run -it --rm --volume $(pwd):/src python  bash
-```
+TODO:
 
 # Neo-python
+
+Going to use the python node client using the python 3.5 image
+
+```bash
+docker run -it --rm --volume "$(pwd)":/src python:3.5  bash
+```
 
 Test it is working: running with the container to ``rm`` on exit
 
@@ -29,7 +31,7 @@ Note: using the ``-p`` flag for the ``prompt.py`` to set it to use the privnet
 $ cd node/neo-python
 $ docker build -t avastmick/neo-node .
 $ cd ../..
-$ docker run -it --rm --net=neo-privnet --volume $(pwd):/neo avastmick/neo-node  bash
+$ docker run -it --rm --net=neo-privnet --volume "$(pwd)":/neo avastmick/neo-node  bash
 $ cd /opt/neo-python
 $ python3 prompt.py -p
 
@@ -43,7 +45,7 @@ You should see:
 Then run it as a permanent container that can be restarted:
 
 ```bash
-$ docker run -it --name neo-python --net=neo-privnet --volume $(pwd):/neo avastmick/neo-node  bash
+$ docker run -it --name neo-python --net=neo-privnet --volume "$(pwd)":/neo avastmick/neo-node  bash
 root@c2bf650cb987: exit
 $
 $ docker start -i neo-python
