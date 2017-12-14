@@ -4,9 +4,7 @@
 - Create meteor skeleton
 
 ```bash
-# Use docker to create meteor skeleton
-alias app='docker run -it --rm --name=app -v "$(pwd)":/app -p 3000:3000 golden/meteor-dev'
-
+alias meteor='docker run -it --rm --name=meteor -v $PWD:/app -p 3000:3000 avastmick/development:meteor'
 ```
 
 
